@@ -1,0 +1,22 @@
+{
+  "name": "eisley",
+  "version": "0.0.0",
+  "description": "Object schema validation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisabrams/eisley"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Chris Abrams <mail@chrisabrams.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisabrams/eisley/issues"
+  },
+  "homepage": "https://github.com/chrisabrams/eisley"
+}
