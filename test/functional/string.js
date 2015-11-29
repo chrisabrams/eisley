@@ -18,7 +18,7 @@ describe('String Validator', function() {
       lastName: type('string', {min: 3})
     })
 
-    var validated = schema.validate(pkg, schema)
+    var validated = schema.validate(pkg)
 
     expect(typeof validated.err).to.equal('undefined')
 
@@ -38,7 +38,7 @@ describe('String Validator', function() {
       lastName: type('string', {min: 4})
     })
 
-    var validated = schema.validate(pkg, schema)
+    var validated = schema.validate(pkg)
 
     expect(typeof validated.err).to.equal('object')
 
