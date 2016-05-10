@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":[],"mappings":"AAAA;;;;;;;AAEA;;;;AACA;;;;;;QAEQ,M;QACA,I","file":"index.js","sourcesContent":["'use strict';\n\nimport Schema from './schema/index'\nimport type   from './schema/type'\n\nexport {Schema}\nexport {type}\n"]}
