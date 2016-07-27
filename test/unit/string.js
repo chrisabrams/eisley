@@ -1,6 +1,6 @@
 'use strict';
 
-import StringValidator from '../../lib/validate/string'
+import StringValidator from '../../src/validate/string'
 
 describe('String Validator', function() {
 

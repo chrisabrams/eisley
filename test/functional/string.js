@@ -1,7 +1,7 @@
 'use strict';
 
-import Schema    from '../../lib/schema/index'
-import type      from '../../lib/schema/type'
+import Schema    from '../../src/schema/index'
+import type      from '../../src/schema/type'
 
 describe('String Validator', function() {
 
