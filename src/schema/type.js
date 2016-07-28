@@ -1,5 +1,3 @@
-'use strict';
-
 import ArrayValidator   from '../validate/array'
 import BooleanValidator from '../validate/boolean'
 import NumberValidator  from '../validate/number'

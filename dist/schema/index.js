@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -14,7 +14,10 @@ var Schema = function () {
 
     _classCallCheck(this, Schema);
 
-    this.options = options;
+    this.options = Object.assign({}, {
+      strict: true
+    }, options);
+
     this.schema = schema;
   }
 
@@ -26,7 +29,7 @@ var Schema = function () {
 
 
   _createClass(Schema, [{
-    key: 'validate',
+    key: "validate",
     value: function validate() {
       var _this = this;
 
@@ -37,6 +40,9 @@ var Schema = function () {
 
       // For each schema rule
       Object.keys(this.schema).forEach(function (key) {
+
+        // If schema is not strict & the package is missing the property
+        if (!_this.options.strict && !pkg[key]) return;
 
         var schemaRule = _this.schema[key];
         var schemaDataType = schemaRule.type;
