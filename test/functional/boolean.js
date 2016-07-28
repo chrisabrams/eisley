@@ -1,18 +1,18 @@
 import Schema    from '../../src/schema/index'
 import type      from '../../src/schema/type'
 
-describe('Validate schema with arrays', function() {
+describe('Validate schema with boolean', function() {
 
-  it('should be a schema of arrays', function(done) {
+  it('should be a schema of numbers', function(done) {
 
     var pkg = {
-      cart: ['apples', 'oranges'],
-      cart2: ['pears', 'reeses']
+      has: true,
+      hasNot: false
     }
 
     let schema = new Schema({
-      cart: type('array', {contains: 'apples'}),
-      cart2: type('array')
+      has: type('boolean'),
+      hasNot: type('boolean')
     })
 
     var validated = schema.validate(pkg)

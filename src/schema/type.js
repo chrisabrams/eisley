@@ -1,9 +1,10 @@
 'use strict';
 
-import ArrayValidator  from '../validate/array'
-import NumberValidator from '../validate/number'
-import ObjectValidator from '../validate/object'
-import StringValidator from '../validate/string'
+import ArrayValidator   from '../validate/array'
+import BooleanValidator from '../validate/boolean'
+import NumberValidator  from '../validate/number'
+import ObjectValidator  from '../validate/object'
+import StringValidator  from '../validate/string'
 
 class SchemaType {
 
@@ -16,6 +17,10 @@ class SchemaType {
 
   array(i) {
     return new ArrayValidator(i, this.options)
+  }
+
+  boolean(i) {
+    return new BooleanValidator(i, this.options)
   }
 
   number(i) {

@@ -10,6 +10,10 @@ var _array = require('../validate/array');
 
 var _array2 = _interopRequireDefault(_array);
 
+var _boolean = require('../validate/boolean');
+
+var _boolean2 = _interopRequireDefault(_boolean);
+
 var _number = require('../validate/number');
 
 var _number2 = _interopRequireDefault(_number);
@@ -40,6 +44,11 @@ var SchemaType = function () {
     key: 'array',
     value: function array(i) {
       return new _array2.default(i, this.options);
+    }
+  }, {
+    key: 'boolean',
+    value: function boolean(i) {
+      return new _boolean2.default(i, this.options);
     }
   }, {
     key: 'number',
