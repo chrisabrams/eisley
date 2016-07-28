@@ -38,22 +38,23 @@ var ArrayValidator = function (_RootValidator) {
   }
 
   /**
-   * Whether or not the array contains a string
-   * @param {string} i The variable to test whether it contains the string supplied.
+   * Whether or not the array contains item
+   * @param {String} k - The item, or key, to check
    */
 
 
   _createClass(ArrayValidator, [{
     key: 'contains',
-    value: function contains() {
+    value: function contains(k) {
 
-      var error = null,
-          result = false;
+      if (this.i.indexOf(k) > -1) return this;
 
       return {
-        error: error,
-        result: result,
-        valueChecked: this.i
+        err: {
+          code: 'NO_CONTAINS',
+          desc: 'The item not in the array: ' + k + '.',
+          valueChecked: this.i
+        }
       };
     }
 

@@ -1,9 +1,7 @@
-'use strict';
-
 import Schema    from '../../src/schema/index'
 import type      from '../../src/schema/type'
 
-describe('String Validator', function() {
+describe('Root Validation Rules', function() {
 
   it.skip('should handle a pkg with less propeties than schema', function(done) {
 

@@ -25,10 +25,11 @@ var RootValidator = function () {
 
   _createClass(RootValidator, [{
     key: "validate",
-    value: function validate(cb) {
+    value: function validate() {
       var _this = this;
 
       var is = this.is();
+
       if (is.err) return is;
 
       var results = [];
@@ -44,12 +45,8 @@ var RootValidator = function () {
       });
 
       if (results.length == 0) {
-        if (cb) return cb(null, true);
-
         return { valid: true };
       }
-
-      if (cb) return cb(results);
 
       return {
         err: results

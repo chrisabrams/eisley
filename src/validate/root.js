@@ -8,9 +8,10 @@ class RootValidator {
   /**
    * Validate the rules passed.
    */
-  validate(cb) {
+  validate() {
 
     var is = this.is()
+
     if(is.err) return is
 
     var results = []
@@ -27,12 +28,8 @@ class RootValidator {
     })
 
     if(results.length == 0) {
-      if(cb) return cb(null, true)
-
       return {valid: true}
     }
-
-    if(cb) return cb(results)
 
     return {
       err: results

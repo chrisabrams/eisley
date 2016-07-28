@@ -10,6 +10,14 @@ var _array = require('../validate/array');
 
 var _array2 = _interopRequireDefault(_array);
 
+var _number = require('../validate/number');
+
+var _number2 = _interopRequireDefault(_number);
+
+var _object = require('../validate/object');
+
+var _object2 = _interopRequireDefault(_object);
+
 var _string = require('../validate/string');
 
 var _string2 = _interopRequireDefault(_string);
@@ -31,19 +39,21 @@ var SchemaType = function () {
   _createClass(SchemaType, [{
     key: 'array',
     value: function array(i) {
-
       return new _array2.default(i, this.options);
     }
   }, {
     key: 'number',
-    value: function number() {}
+    value: function number(i) {
+      return new _number2.default(i, this.options);
+    }
   }, {
     key: 'object',
-    value: function object() {}
+    value: function object(i) {
+      return new _object2.default(i, this.options);
+    }
   }, {
     key: 'string',
     value: function string(i) {
-
       return new _string2.default(i, this.options);
     }
   }]);

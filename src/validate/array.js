@@ -12,18 +12,19 @@ class ArrayValidator extends RootValidator {
   }
 
   /**
-   * Whether or not the array contains a string
-   * @param {string} i The variable to test whether it contains the string supplied.
+   * Whether or not the array contains item
+   * @param {String} k - The item, or key, to check
    */
-  contains() {
+  contains(k) {
 
-    var error  = null,
-        result = false
+    if(this.i.indexOf(k) > -1) return this
 
     return {
-      error,
-      result,
-      valueChecked: this.i
+      err: {
+        code: 'NO_CONTAINS',
+        desc: `The item not in the array: ${k}.`,
+        valueChecked: this.i
+      }
     }
   }
 

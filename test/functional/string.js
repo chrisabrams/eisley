@@ -1,11 +1,9 @@
-'use strict';
-
 import Schema    from '../../src/schema/index'
 import type      from '../../src/schema/type'
 
-describe('String Validator', function() {
+describe('Validate schema with strings', function() {
 
-  it('should be an object of string properties', function(done) {
+  it('should be a schema of strings', function(done) {
 
     var pkg = {
       firstName: 'Captain',
