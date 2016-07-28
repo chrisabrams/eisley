@@ -61,6 +61,11 @@ var SchemaType = function () {
       return new _object2.default(i, this.options);
     }
   }, {
+    key: 'password',
+    value: function password(i) {
+      return new _string2.default(i, this.options);
+    }
+  }, {
     key: 'string',
     value: function string(i) {
       return new _string2.default(i, this.options);

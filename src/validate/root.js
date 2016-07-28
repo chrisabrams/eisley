@@ -14,11 +14,15 @@ class RootValidator {
 
     if(is.err) return is
 
-    var results = []
+    var results   = [],
+        validator = this
 
+    /*
+    NOTE: rules are type options
+    */
     Object.keys(this.options).forEach( (rule) => {
 
-      let result = this[rule](this.options[rule])
+      let result = validator[rule](validator.options[rule])
 
       if(result.err) {
         result.err.ruleKey = rule

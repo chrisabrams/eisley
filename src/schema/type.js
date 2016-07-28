@@ -29,6 +29,10 @@ class SchemaType {
     return new ObjectValidator(i, this.options)
   }
 
+  password(i) {
+    return new StringValidator(i, this.options)
+  }
+
   string(i) {
     return new StringValidator(i, this.options)
   }

@@ -1,6 +1,6 @@
 {
   "name": "eisley",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Object schema validation.",
   "main": "dist/index.js",
   "scripts": {

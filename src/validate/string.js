@@ -28,6 +28,13 @@ class StringValidator extends RootValidator {
   }
 
   /**
+   * Test whether the hash is string.
+   */
+  hash() {
+    return this.is()
+  }
+
+  /**
    * Test whether it is a string.
    * @see http://stackoverflow.com/a/9436948/586131
    */

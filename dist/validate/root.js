@@ -26,17 +26,20 @@ var RootValidator = function () {
   _createClass(RootValidator, [{
     key: "validate",
     value: function validate() {
-      var _this = this;
 
       var is = this.is();
 
       if (is.err) return is;
 
-      var results = [];
+      var results = [],
+          validator = this;
 
+      /*
+      NOTE: rules are type options
+      */
       Object.keys(this.options).forEach(function (rule) {
 
-        var result = _this[rule](_this.options[rule]);
+        var result = validator[rule](validator.options[rule]);
 
         if (result.err) {
           result.err.ruleKey = rule;

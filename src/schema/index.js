@@ -23,10 +23,23 @@ class Schema {
       // If schema is not strict & the package is missing the property
       if(!this.options.strict && !pkg[key]) return
 
-      var schemaRule     = this.schema[key]
-      let schemaDataType = schemaRule.type
+      // The Schema Type class instance that the property is said to, such as: type('string')
+      var schemaType = this.schema[key]
 
-      var result = schemaRule[schemaDataType](pkg[key])
+      // The value if the property we want to test againt respective property
+      var propVal = pkg[key]
+
+      /*
+      NOTE: If the schema type is a password, and the package has a hash.
+      This offers flexability for apps where the password is tested, validated, etc.
+      Before reaching Eisley. This allows the developer to attach the result of said
+      password handling to the "hash" property instead.
+      */
+      if(schemaType.type == 'password' && schemaType.options.hash) {
+        propVal = pkg.hash
+      }
+
+      var result = schemaType[schemaType.type](propVal)
 
       if(result.err) {
         if(!err) err = []
