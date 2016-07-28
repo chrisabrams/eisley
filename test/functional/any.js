@@ -3,15 +3,15 @@ import type      from '../../src/schema/type'
 
 describe('Root Validation Rules', function() {
 
-  it.skip('should handle a pkg with less propeties than schema', function(done) {
+  it('should handle a pkg with more propeties than schema', function(done) {
 
     var pkg = {
-      firstName: 'Captain'
+      firstName: 'Captain',
+      lastName: 'Cook'
     }
 
     let schema = new Schema({
-      firstName: type('string'),
-      lastName: type('string', {min: 3})
+      firstName: type('string')
     })
 
     var validated = schema.validate(pkg)

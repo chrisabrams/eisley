@@ -10,10 +10,9 @@ class Schema {
   /**
    * Takes a pkg and determines if it is valid.
    * @param {object} pkg The object to determine if it matches the schema.
-   * @todo Schema should be able to be any primitive type
    * @todo Schema should support nested objects
    */
-  validate(pkg = {}, cb) {
+  validate(pkg = {}) {
 
     var err = undefined
 
@@ -35,12 +34,6 @@ class Schema {
       }
 
     })
-
-    if(cb && typeof cb == 'function') {
-      if(err) return cb(err)
-
-      return cb(null, true)
-    }
 
     return {
       err
